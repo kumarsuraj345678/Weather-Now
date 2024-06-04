@@ -136,7 +136,7 @@ body {
 }
 
 .weather {
-  display: block;
+  display: none;
 }
 
 .error {
