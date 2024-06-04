@@ -1,56 +1,65 @@
 const apiKey = "311540a6489cccc2a48785f086b3d254";
-const apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 const searchBox = document.querySelector(".search-box input");
 const searchBtn = document.querySelector(".search-box button");
 const weatherIcon = document.querySelector(".weather-icon");
+const errorElement = document.querySelector(".error");
+const weatherElement = document.querySelector(".weather");
+
+const weatherIcons = {
+  thunderstorm: "images/thunderstorms-overcast-rain.svg",
+  drizzle: "images/overcast-drizzle.svg",
+  rain: "images/overcast-rain.svg",
+  snow: "images/overcast-snow.svg",
+  mist: "images/mist.svg",
+  smoke: "images/overcast-smoke.svg",
+  haze: "images/overcast-haze.svg",
+  fog: "images/overcast-fog.svg",
+  clear: "images/clear-day.svg",
+  clouds: "images/overcast.svg",
+  dust: "images/dust-wind.svg",
+  sand: "images/dust-wind.svg",
+  ash: "images/code-yellow.svg",
+  squall: "images/hurricane.svg",
+  tornado: "images/tornado.svg",
+};
 
 async function checkWeather(city) {
-  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-  if (response.status == 404) {
-    document.querySelector(".error").style.display = "block";
-    document.querySelector(".weather").style.display = "none";
-  } else {
-    var data = await response.json();
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML =
-      data.main.temp.toFixed(1) + "&deg;C";
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-    document.querySelector(".desc").textContent = data.weather[0].description;
-    document.querySelector(".feels_like").innerHTML =
-      data.main.feels_like.toFixed(1) + "&deg;C";
-
-    if (data.weather[0].main == "Thunderstorm") {
-      weatherIcon.src = "images/thunderstorms.svg";
-    } else if (data.weather[0].main == "Drizzle") {
-      weatherIcon.src = "images/drizzle.svg";
-    } else if (data.weather[0].main == "Rain") {
-      weatherIcon.src = "images/rain.svg";
-    } else if (data.weather[0].main == "Snow") {
-      weatherIcon.src = "images/snow.svg";
-    } else if (data.weather[0].main == "Mist") {
-      weatherIcon.src = "images/mist.svg";
-    } else if (data.weather[0].main == "Smoke") {
-      weatherIcon.src = "images/smoke.svg";
-    } else if (data.weather[0].main == "Haze") {
-      weatherIcon.src = "images/haze.svg";
-    } else if (data.weather[0].main == "Fog") {
-      weatherIcon.src = "images/fog.svg";
-    } else if (data.weather[0].main == "Clear") {
-      weatherIcon.src = "images/clear-day.svg";
-    } else if (data.weather[0].main == "Clouds") {
-      weatherIcon.src = "images/cloudy.svg";
-    } else if (data.weather[0].main == "night") {
-      weatherIcon.src = "images/clear-night.svg";
+  try {
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    if (!response.ok) {
+      throw new Error("Oops! City not found. Please try again.");
     }
-
-    document.querySelector(".error").style.display = "none";
-    document.querySelector(".weather").style.display = "block";
+    const data = await response.json();
+    updateWeatherUI(data);
+    errorElement.style.display = "none";
+    weatherElement.style.display = "block";
+  } catch (error) {
+    errorElement.textContent = error.message;
+    errorElement.style.display = "block";
+    weatherElement.style.display = "none";
   }
+}
+
+function updateWeatherUI(data) {
+  document.querySelector(".city").textContent = data.name;
+  document.querySelector(".temp").innerHTML = data.main.temp.toFixed(1) + "&deg;C";
+  document.querySelector(".humidity").textContent = data.main.humidity + "%";
+  document.querySelector(".wind").textContent = data.wind.speed + " km/h";
+  document.querySelector(".desc").textContent = data.weather[0].description;
+  document.querySelector(".feels_like").innerHTML = data.main.feels_like.toFixed(1) + "&deg;C";
+
+  const weatherMain = data.weather[0].main.toLowerCase();
+  weatherIcon.src = weatherIcons[weatherMain] || "images/starry-night.svg.svg";
 }
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+});
+
+searchBox.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    checkWeather(searchBox.value);
+  }
 });
