@@ -51,7 +51,7 @@ function updateWeatherUI(data) {
   document.querySelector(".feels_like").innerHTML = data.main.feels_like.toFixed(1) + "&deg;C";
 
   const weatherMain = data.weather[0].main.toLowerCase();
-  weatherIcon.src = weatherIcons[weatherMain] || "images/starry-night.svg.svg";
+  weatherIcon.src = weatherIcons[weatherMain] || "images/starry-night.svg";
 }
 
 searchBtn.addEventListener("click", () => {
