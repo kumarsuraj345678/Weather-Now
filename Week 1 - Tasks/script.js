@@ -1,5 +1,6 @@
 const apiKey = "311540a6489cccc2a48785f086b3d254";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl =
+  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 const searchBox = document.querySelector(".search-box input");
 const searchBtn = document.querySelector(".search-box button");
@@ -25,6 +26,17 @@ const weatherIcons = {
   tornado: "images/tornado.svg",
 };
 
+function formatLocalTime(localTime) {
+  const options = {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
+  return localTime.toLocaleString("en-US", options);
+}
+
 async function checkWeather(city) {
   try {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -32,7 +44,9 @@ async function checkWeather(city) {
       throw new Error("Oops! City not found. Please try again.");
     }
     const data = await response.json();
-    updateWeatherUI(data);
+    const timezoneOffsetSeconds = data.timezone;
+
+    updateWeatherUI(data, timezoneOffsetSeconds);
     errorElement.style.display = "none";
     weatherElement.style.display = "block";
   } catch (error) {
@@ -42,16 +56,37 @@ async function checkWeather(city) {
   }
 }
 
-function updateWeatherUI(data) {
+function updateWeatherUI(data, timezoneOffsetSeconds) {
   document.querySelector(".city").textContent = data.name;
-  document.querySelector(".temp").innerHTML = data.main.temp.toFixed(1) + "&deg;C";
+  document.querySelector(".temp").innerHTML =
+    data.main.temp.toFixed(1) + "&deg;C";
   document.querySelector(".humidity").textContent = data.main.humidity + "%";
   document.querySelector(".wind").textContent = data.wind.speed + " km/h";
   document.querySelector(".desc").textContent = data.weather[0].description;
-  document.querySelector(".feels_like").innerHTML = data.main.feels_like.toFixed(1) + "&deg;C";
+  document.querySelector(".feels_like").innerHTML =
+    data.main.feels_like.toFixed(1) + "&deg;C";
 
   const weatherMain = data.weather[0].main.toLowerCase();
   weatherIcon.src = weatherIcons[weatherMain] || "images/starry-night.svg";
+
+  const currentTime = new Date();
+  const timezoneOffset = currentTime.getTimezoneOffset() * 60 * 1000;
+  const adjustedTime = new Date(
+    currentTime.getTime() + timezoneOffset + timezoneOffsetSeconds * 1000
+  );
+
+  const formattedTime = formatLocalTime(adjustedTime);
+
+  document.querySelector(".local-time").textContent = `${formattedTime}`;
+
+  setInterval(() => {
+    const currentTime = new Date();
+    const adjustedTime = new Date(
+      currentTime.getTime() + timezoneOffset + timezoneOffsetSeconds * 1000
+    );
+    const formattedTime = formatLocalTime(adjustedTime);
+    document.querySelector(".local-time").textContent = `${formattedTime}`;
+  }, 60000);
 }
 
 searchBtn.addEventListener("click", () => {
