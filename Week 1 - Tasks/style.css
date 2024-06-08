@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
+/* Root variables for colors, font sizes, etc. */
 :root {
   --main-bg-color: #e7f6ff;
   --text-color: white;
@@ -171,6 +172,7 @@ body {
   font-weight: bold;
 }
 
+/* Responsive design for smaller screens */
 @media screen and (max-width: 480px) {
   .search-box input {
     font-size: 1rem;

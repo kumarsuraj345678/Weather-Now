@@ -8,6 +8,7 @@ const weatherIcon = document.querySelector(".weather-icon");
 const errorElement = document.querySelector(".error");
 const weatherElement = document.querySelector(".weather");
 
+// Weather icons mapping
 const weatherIcons = {
     thunderstorm: "images/thunderstorms-overcast-rain.svg",
     drizzle: "images/overcast-drizzle.svg",
@@ -26,6 +27,7 @@ const weatherIcons = {
     tornado: "images/tornado.svg",
 };
 
+// AQI descriptions mapping
 const aqiDescriptions = {
     1: "Good",
     2: "Fair",
@@ -34,6 +36,7 @@ const aqiDescriptions = {
     5: "Very Poor"
 };
 
+// Format local time
 function formatLocalTime(localTime) {
     const options = {
         weekday: "long",
@@ -45,6 +48,7 @@ function formatLocalTime(localTime) {
     return localTime.toLocaleString("en-US", options);
 }
 
+// Fetch weather data
 async function fetchWeather(city) {
     try {
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -58,6 +62,7 @@ async function fetchWeather(city) {
     }
 }
 
+// Fetch AQI data
 async function fetchAQI(lat, lon) {
     try {
         const response = await fetch(`${aqiUrl}lat=${lat}&lon=${lon}&appid=${apiKey}`);
@@ -71,6 +76,7 @@ async function fetchAQI(lat, lon) {
     }
 }
 
+// Update UI with weather and AQI data
 function updateUI(data, aqiValue, timezoneOffsetSeconds) {
     document.querySelector(".city").textContent = data.name;
     document.querySelector(".temp").innerHTML = data.main.temp.toFixed(1) + "&deg;C";
@@ -93,6 +99,7 @@ function updateUI(data, aqiValue, timezoneOffsetSeconds) {
     document.querySelector(".local-time").textContent = `${formattedTime}`;
 }
 
+// Check weather and update UI
 async function checkWeather(city) {
     try {
         const weatherData = await fetchWeather(city);
@@ -110,6 +117,7 @@ async function checkWeather(city) {
     }
 }
 
+// Event listeners for search button and enter key
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
 });
