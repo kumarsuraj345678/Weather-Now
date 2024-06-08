@@ -27,6 +27,11 @@ body {
   font-size: var(--font-size-base);
 }
 
+.title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
 .container {
   position: relative;
   width: 90%;
@@ -88,8 +93,7 @@ body {
 }
 
 .weather-icon {
-  width: 10rem;
-  margin-top: 1rem;
+  width: 8rem;
 }
 
 .weather h1 {
@@ -105,7 +109,7 @@ body {
 .weather h3 {
   text-transform: capitalize;
   font-style: italic;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem;
   font-size: var(--font-size-lg);
 }
 
@@ -113,8 +117,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
-  margin-top: 1.5rem;
+  padding: 0 0.2rem;
+  margin-top: 1rem;
   gap: 1rem;
 }
 
@@ -173,13 +177,32 @@ body {
     min-width: 90%;
   }
 
+  .search-box i{
+    font-size: large;
+  }
+
   .weather-icon {
-    width: 7rem;
+    width: 6rem;
+  }
+
+  .weather h1 {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+  }
+
+  .weather h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+  }
+
+  .weather h3,
+  .weather p {
+    font-size: var(--font-size-base);
+    font-weight: 400;
   }
 
   .details {
-    padding: 0.5rem;
-    gap: 0.5rem;
+    gap: 0.2rem;
     flex-direction: row;
   }
 
