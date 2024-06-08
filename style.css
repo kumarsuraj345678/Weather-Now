@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* Root variables for colors, font sizes, etc. */
+:root {
+  --main-bg-color: #e7f6ff;
+  --text-color: white;
+  --error-color: orangered;
+  --shadow-color: rgba(0, 123, 255, 0.3);
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2.5rem;
+  --font-size-xxl: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--main-bg-color);
+  font-size: var(--font-size-base);
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 470px;
+  background-image: url(images/Cloudy.svg);
+  background-size: cover;
+  color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  outline: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0 3rem 0 2.5rem;
+}
+
+.search-box input::placeholder {
+  color: var(--text-color);
+}
+
+.search-box button {
+  position: absolute;
+  right: 1.25rem;
+  width: 1.5rem;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: 0;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.search-box > i {
+  position: absolute;
+  left: 1rem;
+}
+
+.weather-icon {
+  width: 8rem;
+}
+
+.weather h1 {
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
+}
+
+.weather h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+}
+
+.weather h3 {
+  text-transform: capitalize;
+  font-style: italic;
+  margin: 0.5rem;
+  font-size: var(--font-size-lg);
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.2rem;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 30%;
+}
+
+.col p:nth-of-type(1),
+.weather .temp,
+.weather .city {
+  font-weight: bold;
+}
+
+.col img {
+  max-width: 4.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.humidity,
+.wind,
+.feels_like {
+  font-size: 1.25rem;
+}
+
+.weather {
+  display: none;
+}
+
+.error {
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: var(--error-color);
+  font-weight: bold;
+  display: none;
+}
+
+.aqi {
+  margin-top: 1rem;
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+}
+
+.aqi-value {
+  font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 480px) {
+  .search-box input {
+    font-size: 1rem;
+    min-width: 90%;
+  }
+
+  .search-box i{
+    font-size: large;
+  }
+
+  .weather-icon {
+    width: 6rem;
+  }
+
+  .weather h1 {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+  }
+
+  .weather h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+  }
+
+  .weather h3,
+  .weather p {
+    font-size: var(--font-size-base);
+    font-weight: 400;
+  }
+
+  .details {
+    gap: 0.2rem;
+    flex-direction: row;
+  }
+
+  .col {
+    flex: 1 1 30%;
+  }
+
+  .col img {
+    max-width: 3.5rem;
+  }
+
+  .humidity,
+  .wind,
+  .feels_like {
+    font-size: 1rem;
+  }
+}
