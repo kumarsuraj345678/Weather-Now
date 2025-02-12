@@ -1,8 +1,8 @@
-# 🌦️ Weather App
+# 🌦️ Weather Now
 
 ## 📄 Description
 
-The Weather App provides real-time weather updates and air quality information for any city. Users can search for a city to get the current weather conditions, including temperature, humidity, wind speed, and a weather description. The app also displays the local time and air quality with a corresponding description.
+The Weather Now provides real-time weather updates and air quality information for any city. Users can search for a city to get the current weather conditions, including temperature, humidity, wind speed, and a weather description. The app also displays the local time and air quality with a corresponding description.
 
 ## 🛠️ Technologies Used
 
@@ -18,9 +18,9 @@ The Weather App provides real-time weather updates and air quality information f
 
 ## 🚀 Usage
 
-To use the Weather App:
+To use the Weather Now:
 
-1. Visit the hosted website: [Weather App](https://kumarsuraj345678.github.io/Techplement/)  
+1. Visit the hosted website: [Weather Now](https://kumarsuraj345678.github.io/Techplement/)  
 2. Enter the name of the city in the search box and click the search button or press `Enter`.
 3. The app will display the current weather conditions, local time, and air quality for the specified city.
 
@@ -37,7 +37,7 @@ To use the Weather App:
 *Home Page (Search Box):*
 ![Screenshot (94)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/35558776-148b-4492-8a17-38759ea5f69c)
 
-*Weather App UI (Search Results including weather information and additional details):*
+*Weather Now UI (Search Results including weather information and additional details):*
 ![Screenshot (95)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/9d1a96bf-0565-48f1-b3d1-b71da6dbc6c1)
 
 ![Screenshot (96)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/8b90dff8-0612-4443-8cf8-1dff96118b1f)
