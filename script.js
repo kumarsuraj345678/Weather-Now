@@ -39,13 +39,14 @@ const aqiDescriptions = {
 // Format local time
 function formatLocalTime(localTime) {
     const options = {
-        weekday: "long",
+        weekday: "short",
+        year: "numeric",
         month: "short",
         day: "numeric",
         hour: "numeric",
         minute: "numeric",
     };
-    return localTime.toLocaleString("en-US", options);
+    return localTime.toLocaleString("en-IN", options);
 }
 
 // Fetch weather data

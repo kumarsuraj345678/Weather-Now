@@ -1,18 +1,10 @@
-# Weather App
+# 🌦️ Weather App
 
-## Description
+## 📄 Description
 
 The Weather App provides real-time weather updates and air quality information for any city. Users can search for a city to get the current weather conditions, including temperature, humidity, wind speed, and a weather description. The app also displays the local time and air quality with a corresponding description.
 
-## Table of Contents
-
-- [Technologies Used](#technologies-used)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Frontend:**
   - HTML
@@ -24,16 +16,15 @@ The Weather App provides real-time weather updates and air quality information f
   - [Meteocons](https://bas.dev/work/meteocons)
   - Animated weather icons
 
-
-## Usage
+## 🚀 Usage
 
 To use the Weather App:
 
-1. Visit the hosted website: [Weather App](https://surajkumar345678.github.io/Techplement/)  
+1. Visit the hosted website: [Weather App](https://kumarsuraj345678.github.io/Techplement/)  
 2. Enter the name of the city in the search box and click the search button or press `Enter`.
 3. The app will display the current weather conditions, local time, and air quality for the specified city.
 
-## Features
+## 🌟 Features
 
 - Real-time weather updates including temperature, humidity, wind speed, and weather description.
 - Displays a weather icon based on the current weather conditions.
@@ -41,22 +32,22 @@ To use the Weather App:
 - Provides air quality with descriptive categories.
 - Responsive design for mobile and desktop views.
 
-## Screenshots
+## 📸 Screenshots
+
 *Home Page (Search Box):*
-![Screenshot (94)](https://github.com/surajkumar345678/Techplement/assets/60316890/35558776-148b-4492-8a17-38759ea5f69c)
+![Screenshot (94)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/35558776-148b-4492-8a17-38759ea5f69c)
 
 *Weather App UI (Search Results including weather information and additional details):*
-![Screenshot (95)](https://github.com/surajkumar345678/Techplement/assets/60316890/9d1a96bf-0565-48f1-b3d1-b71da6dbc6c1)
+![Screenshot (95)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/9d1a96bf-0565-48f1-b3d1-b71da6dbc6c1)
 
-![Screenshot (96)](https://github.com/surajkumar345678/Techplement/assets/60316890/8b90dff8-0612-4443-8cf8-1dff96118b1f)
+![Screenshot (96)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/8b90dff8-0612-4443-8cf8-1dff96118b1f)
 
-![Screenshot (97)](https://github.com/surajkumar345678/Techplement/assets/60316890/794a4634-dc4f-46d9-890f-41e2f3122bc7)
+![Screenshot (97)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/794a4634-dc4f-46d9-890f-41e2f3122bc7)
 
 *Error Handling Page:*
-![Screenshot (98)](https://github.com/surajkumar345678/Techplement/assets/60316890/bff8c820-b66c-477c-ad1a-b9e1c2ff6a46)
+![Screenshot (98)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/bff8c820-b66c-477c-ad1a-b9e1c2ff6a46)
 
-
-## Contributing
+## 🤝 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -72,8 +63,7 @@ Contributions are what make the open-source community such an amazing place to l
 - Update the README.md with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations, and container parameters.
 - Increase the version numbers in any examples files and the README.md to the new version that this Pull Request would represent.
 
-
-## Acknowledgements
+## 🙏 Acknowledgements
 
 - [OpenWeatherMap](https://openweathermap.org/) for providing the weather and AQI data.
 - [Font Awesome](https://fontawesome.com/) for the icon library.
