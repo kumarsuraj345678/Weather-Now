@@ -79,7 +79,7 @@ async function fetchAQI(lat, lon) {
 
 // Update UI with weather and AQI data
 function updateUI(data, aqiValue, timezoneOffsetSeconds) {
-    document.querySelector(".city").textContent = data.name;
+    document.querySelector(".city").innerHTML = `${data.name} <span class="small-country">${data.sys.country}</span>`;
     document.querySelector(".temp").innerHTML = data.main.temp.toFixed(1) + "&deg;C";
     document.querySelector(".humidity").textContent = data.main.humidity + "%";
     document.querySelector(".wind").textContent = data.wind.speed + " km/h";
