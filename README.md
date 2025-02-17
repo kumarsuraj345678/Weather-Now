@@ -20,7 +20,7 @@ The Weather Now provides real-time weather updates and air quality information f
 
 To use the Weather Now:
 
-1. Visit the hosted website: [Weather Now](https://kumarsuraj345678.github.io/Techplement/)  
+1. Visit the hosted website: [Weather Now]([https://kumarsuraj345678.github.io/Techplement/](https://kumarsuraj345678.github.io/Weather-Now/))  
 2. Enter the name of the city in the search box and click the search button or press `Enter`.
 3. The app will display the current weather conditions, local time, and air quality for the specified city.
 
