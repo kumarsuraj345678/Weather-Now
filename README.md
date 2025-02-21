@@ -2,7 +2,7 @@
 
 ## 📄 Description
 
-The Weather Now provides real-time weather updates and air quality information for any city. Users can search for a city to get the current weather conditions, including temperature, humidity, wind speed, and a weather description. The app also displays the local time and air quality with a corresponding description.
+The Weather Now provides real-time weather updates and air quality information for any city. Users can search for a city to get the current weather conditions, including temperature, humidity, wind speed, and a weather description. The app features a temperature unit toggle that allows users to switch between Fahrenheit and Celsius displays. The app also displays the local time and air quality with a corresponding description.
 
 ## 🛠️ Technologies Used
 
@@ -23,10 +23,12 @@ To use the Weather Now:
 1. Visit the hosted website: [Weather Now]([https://kumarsuraj345678.github.io/Techplement/](https://kumarsuraj345678.github.io/Weather-Now/))  
 2. Enter the name of the city in the search box and click the search button or press `Enter`.
 3. The app will display the current weather conditions, local time, and air quality for the specified city.
+4. Use the temperature unit toggle button to switch between Fahrenheit and Celsius.
 
 ## 🌟 Features
 
 - Real-time weather updates including temperature, humidity, wind speed, and weather description.
+- Temperature unit toggle to switch between Fahrenheit and Celsius.
 - Displays a weather icon based on the current weather conditions.
 - Shows the local time for the searched city.
 - Provides air quality with descriptive categories.
