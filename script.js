@@ -7,7 +7,7 @@ const searchBtn = document.querySelector(".search-box button");
 const weatherIcon = document.querySelector(".weather-icon");
 const errorElement = document.querySelector(".error");
 const weatherElement = document.querySelector(".weather");
-let isCelsius = true; // Default unit
+let isCelsius = true;
 
 const weatherIcons = {
   thunderstorm: "images/thunderstorms-overcast-rain.svg",
@@ -51,16 +51,12 @@ function celsiusToFahrenheit(celsius) {
   return (celsius * 9) / 5 + 32;
 }
 
-function displayTemperature(tempC, feelsLikeC) {
+function displayTemperature(tempC) {
   if (isCelsius) {
     document.querySelector(".temp").innerHTML = tempC.toFixed(1) + "&deg;C";
-    document.querySelector(".feels_like").innerHTML =
-      feelsLikeC.toFixed(1) + "&deg;C";
   } else {
     document.querySelector(".temp").innerHTML =
       celsiusToFahrenheit(tempC).toFixed(1) + "&deg;F";
-    document.querySelector(".feels_like").innerHTML =
-      celsiusToFahrenheit(feelsLikeC).toFixed(1) + "&deg;F";
   }
 }
 
@@ -86,9 +82,10 @@ function updateUI(data, aqiValue, timezoneOffsetSeconds) {
   document.querySelector(".humidity").textContent = data.main.humidity + "%";
   document.querySelector(".wind").textContent = data.wind.speed + " km/h";
   document.querySelector(".desc").textContent = data.weather[0].description;
+  document.querySelector(".feels_like").innerHTML = data.main.feels_like.toFixed(1) + "&deg;C";
   document.querySelector(".aqi-value").textContent = aqiDescriptions[aqiValue];
 
-  displayTemperature(data.main.temp, data.main.feels_like);
+  displayTemperature(data.main.temp);
 
   const weatherMain = data.weather[0].main.toLowerCase();
   weatherIcon.src = weatherIcons[weatherMain] || "images/starry-night.svg";
