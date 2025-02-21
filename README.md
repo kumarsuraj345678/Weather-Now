@@ -37,17 +37,23 @@ To use the Weather Now:
 ## 📸 Screenshots
 
 *Home Page (Search Box):*
-![Screenshot (94)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/35558776-148b-4492-8a17-38759ea5f69c)
+![Macbook-Air-1559x975](https://github.com/user-attachments/assets/bc76f3c4-7173-4797-8cfe-325725ebed68)
 
 *Weather Now UI (Search Results including weather information and additional details):*
-![Screenshot (95)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/9d1a96bf-0565-48f1-b3d1-b71da6dbc6c1)
+![Macbook-Air-1559x975](https://github.com/user-attachments/assets/51c83b9d-aa4c-426b-b5c1-914a71a47618)
 
-![Screenshot (96)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/8b90dff8-0612-4443-8cf8-1dff96118b1f)
+![Macbook-Air-1559x975](https://github.com/user-attachments/assets/8f7055b5-9343-4e78-9e70-832baa4e242e)
 
-![Screenshot (97)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/794a4634-dc4f-46d9-890f-41e2f3122bc7)
+![Macbook-Air-1559x975](https://github.com/user-attachments/assets/515ac964-280a-4144-addd-22d2a9974356)
+
+*Mobile Device (Responsiveness):*
+
+![iPhone-14-Pro-393x852](https://github.com/user-attachments/assets/96a7b320-537a-4150-ba5d-60b714e95dcb)
 
 *Error Handling Page:*
-![Screenshot (98)](https://github.com/kumarsuraj345678/Techplement/assets/60316890/bff8c820-b66c-477c-ad1a-b9e1c2ff6a46)
+![Macbook-Air-1559x975](https://github.com/user-attachments/assets/1c690898-d9ee-4224-821f-27a2e7b0995e)
+
+
 
 ## 🤝 Contributing
 
